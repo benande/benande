@@ -6,8 +6,7 @@ copyright = "&copy; 2018 Benjamin Anderson"
 disqusShortname = ""
 googleAnalytics = ""
 enableEmoji = true
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
-uglyURLs = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [Privacy]
 
@@ -46,8 +45,8 @@ uglyURLs = true
     highlightJsUrl = ""
     highlightJsLocalUrl = ""
 
-#[Permalinks]
-#    post = "/:year/:month/:day/:slug/"
+[Permalinks]
+    post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
     name = "Blog"

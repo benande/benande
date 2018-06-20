@@ -9,6 +9,11 @@ tags: ["R Markdown", "plot", "regression"]
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
 ```
+ 
+# Testing Knitr path
+```{r}
+knitr::opts_chunk$get('fig.path')
+```
 
 # R Markdown
 

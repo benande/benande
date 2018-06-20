@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://benande.netlify.com/"
 title = "Ben Anderson"
 theme = "ghostwriter"
 languageCode = "en-us"
@@ -7,6 +7,7 @@ disqusShortname = ""
 googleAnalytics = ""
 enableEmoji = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+uglyURLs = true
 
 [Privacy]
 
@@ -45,8 +46,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
     highlightJsUrl = ""
     highlightJsLocalUrl = ""
 
-[Permalinks]
-    post = "/:year/:month/:day/:slug/"
+#[Permalinks]
+#    post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
     name = "Blog"

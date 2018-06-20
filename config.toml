@@ -6,7 +6,7 @@ copyright = "&copy; 2018 Benjamin Anderson"
 disqusShortname = ""
 googleAnalytics = ""
 enableEmoji = true
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 
 [Privacy]
 

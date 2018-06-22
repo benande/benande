@@ -73,8 +73,4 @@ The value of this will be positive if the date is before the current period, and
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_filter-setup.png)
 
-Your final sheet should look something like this:
-
-![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_worksheet-final.png)
-
 I find myself adding this parameter control to nearly every dashboard I create, and I hope you find it as useful as I do!

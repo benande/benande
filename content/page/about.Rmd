@@ -12,7 +12,7 @@ description: "Lies, damned lies, and statistics"
 </center>
 # Bio
 
-I have been a professional data analyst working for large corporations for more than ten years. I kind of feel into this career by accident, but it turned out to be the perfect intersection of coding, mathematics, and design that really appeals to me. I am especially passionate about visualization, teaching, and communication. My most used tools are SQL, R, Tableau, and Excel.
+I have been a professional data analyst working for large corporations for more than ten years. I kind of fell into this career by accident, but it turned out to be the perfect intersection of coding, mathematics, and design that really appeals to me. I am especially passionate about visualization, teaching, and communication. My most used tools are SQL, R, Tableau, and Excel.
 
 # This Site
 

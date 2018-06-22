@@ -27,7 +27,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [Params]
     intro = true
-    headline = "Ben Anderson"
+    headline = "Blog"
     description = "Mistakes Were Made"
     github = "https://github.com/benande"
 #    gitlab = "https://gitlab.com/XXX"
@@ -35,7 +35,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 #    gplus = "https://google.com/+XXX"
     twitter = "https://twitter.com/BenIsTinkering"
 #    stackoverflow = "https://stackoverflow.com/users/XXX/YYY"
-    email = "benande@gmail.com"
+#    email = "benande@gmail.com"
     opengraph = true
     shareTwitter = true
     shareFacebook = true
@@ -53,10 +53,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/"
     weight = 1
 
-[[menu.main]]
-    name = "Projects"
-    url = "/project/"
-    weight = 2
+#[[menu.main]]
+#    name = "Projects"
+#    url = "/project/"
+#    weight = 2
 
 [[menu.main]]
     name = "Contact"

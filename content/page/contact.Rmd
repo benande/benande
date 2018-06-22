@@ -1,0 +1,10 @@
+---
+title: "Contact"
+date: 2018-06-22
+author: "Ben Anderson"
+description: "You're making a huge mistake"
+---
+
+# Contact
+
+Best way to contact me is probably via Twitter [\@benistinkering](https://twitter.com/BenIsTinkering). If you try to anonymously add me as a connection on LinkedIn, I'll just ignore you along with all of the lazy recruiters.

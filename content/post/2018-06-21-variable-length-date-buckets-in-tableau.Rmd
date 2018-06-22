@@ -1,0 +1,81 @@
+---
+title: "Variable Length Date Groupings in Tableau"
+description: "A tip for using date groups of different sizes with a parameter dropdown"
+author: "Ben Anderson"
+date: 2018-06-21T15:02:00-04:00
+categories: [Data]
+tags: [Tableau, Tips]
+slug: "tableau-variable-dates"
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+This is one of the Tableau techniques that I use in almost every dashboard I create. My users usually want to be able to look at trends daily, weekly, or monthly within the same view. This is pretty easy, but it takes a few steps.
+
+# Dummy Data
+
+First, let's use R to generate a year's worth of dummy data. If you don't use R, you could use Excel or Python. I'm using July through June to cross a year-end boundary.
+
+```{r data}
+data = as.data.frame(
+  list(
+    date = as.Date("2017-07-01") + seq(0,364),
+    count = round(runif(365,0,1) * 100, digits = 0)),
+  row.names = NULL)
+write.csv(data, file = "dummy_data.csv", row.names = FALSE)
+head(data)
+```
+
+Next, open up Tableau, and import this CSV using "New Data Source" -> "More...", then navigate to your file. 
+
+<!-- ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_import.png) -->
+# Parameter Setup
+Next, create a new worksheet. Right-click anywhere in your "Data" area and select "Create Parameter":
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_parameter.png)
+
+Then, set it up as follows. You'll see some of the options change as you make your selections.
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_parameter-setup.png)
+
+Right-click on your new Parameter, and select "Show Parameter Control". You will now have a Parameter drop-down on the right of the worksheet.
+
+# Create Calculated Field
+As with the Parameter, right click in your Data area, and select "Create Calculated Field...":
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_calc-field.png)
+
+Set up your calculated field as follows. If you prefer for your weeks to start on a different day, such as 'Monday', enter that in place of 'Sunday'.
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_calc-field-setup.png)
+
+# Add to Worksheet
+Drag "Time Period" to the Row shelf and Count to the Text mark. By default, Tableau changes Time Period to YEAR(Time Period). Right-click on this in the row area, then select "Exact Date". This changes Time Period to a continuous dimension, which we don't want. Right-click on Time Period again, and select "Discrete". Your worksheet should look like this:
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_worksheet.png)
+
+Try out your parameter control. It should correctly adjust your date dimension. You could be done here, but there are a few ways to clean this up a bit.
+
+# Polish
+First, the date formatting is ugly. Right-click on Time Period in the Data area, select "Default Properties", then "Date Format". Select "Custom", and enter mm/dd as the date format. 
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_date-format.png)
+
+Next, drag "Time Period" to the row shelf in front of the existing dimension, so that you get "YEAR(Time Period)" in addition to "Time Period". 
+
+Finally, you'll want to add a filter so that you don't show partial periods. Right-click in the Data area to create another Calculated Field like this:
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_current-period.png)
+
+The value of this will be positive if the date is before the current period, and 0 if the date is in the current period. Right-click on "Current Period?" and convert it to a dimension. Drag it to the "Filters" area, then set it up like this:
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_filter-setup.png)
+
+Your final sheet should look something like this:
+
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_worksheet-final.png)
+
+I find myself adding this parameter control to nearly every dashboard I create, and I hope you find it as useful as I do!

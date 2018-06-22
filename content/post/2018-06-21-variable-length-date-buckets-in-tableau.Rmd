@@ -32,40 +32,40 @@ Next, open up Tableau, and import this CSV using "New Data Source" -> "More...",
 
 <!-- ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_import.png) -->
 # Parameter Setup
-Next, create a new worksheet. Right-click anywhere in your "Data" area and select "Create Parameter":
+To get started, create a new worksheet. Right-click anywhere in your "Data" area, and select "Create Parameter":
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_parameter.png)
 
-Then, set it up as follows. You'll see some of the options change as you make your selections.
+Set your parameter up as follows. You'll see some of the options change as you make your selections.
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_parameter-setup.png)
 
-Right-click on your new Parameter, and select "Show Parameter Control". You will now have a Parameter drop-down on the right of the worksheet.
+Right-click on your new Parameter, and select "Show Parameter Control". You will now have a Parameter dropdown on the right side of the worksheet.
 
-# Create Calculated Field
+# Calculated Field
 As with the Parameter, right click in your Data area, and select "Create Calculated Field...":
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_calc-field.png)
 
-Set up your calculated field as follows. If you prefer for your weeks to start on a different day, such as 'Monday', enter that in place of 'Sunday'.
+Set up your calculated field as follows. If your weeks usually start on a different day, such as 'Monday', enter that in place of 'Sunday'.
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_calc-field-setup.png)
 
 # Add to Worksheet
-Drag "Time Period" to the Row shelf and Count to the Text mark. By default, Tableau changes Time Period to YEAR(Time Period). Right-click on this in the row area, then select "Exact Date". This changes Time Period to a continuous dimension, which we don't want. Right-click on Time Period again, and select "Discrete". Your worksheet should look like this:
+Drag "Time Period" to the Row shelf and Count to Text in the Marks area. By default, Tableau changes Time Period to YEAR(Time Period). Right-click on this in the row area, then select "Exact Date". This changes Time Period to a continuous dimension, which we don't want. Right-click on Time Period again, and select "Discrete". Your worksheet should look like this:
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_worksheet.png)
 
-Try out your parameter control. It should correctly adjust your date dimension. You could be done here, but there are a few ways to clean this up a bit.
+Try out your parameter control. It should correctly adjust your date dimension between days, weeks, months, and quarters. You could be done here, but there are a few ways to clean this up a bit.
 
 # Polish
-First, the date formatting is ugly. Right-click on Time Period in the Data area, select "Default Properties", then "Date Format". Select "Custom", and enter mm/dd as the date format. 
+First, the date formatting is ugly. Right-click on Time Period in the Data area, select "Default Properties", then "Date Format". Select "Custom", and enter mmm-dd as the date format. Formatting is tricky, since you'll be switching between months (where you don't care about the days) and days/weeks (where you do care about the days), but you can only use one format for the "Time Period" dimension. I have found that mmm-dd gives the best balance.
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_date-format.png)
 
 Next, drag "Time Period" to the row shelf in front of the existing dimension, so that you get "YEAR(Time Period)" in addition to "Time Period". 
 
-Finally, you'll want to add a filter so that you don't show partial periods. Right-click in the Data area to create another Calculated Field like this:
+Finally, add a filter so that the dashboard doesn't show partial periods. Right-click in the Data area to create another Calculated Field like this:
 
 ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_current-period.png)
 

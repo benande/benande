@@ -6,7 +6,6 @@ date: 2018-06-21T15:02:00-04:00
 categories: [Data]
 tags: [Tableau, Tips]
 slug: "tableau-variable-dates"
-draft: true
 ---
 
 ```{r setup, include=FALSE}

@@ -17,3 +17,5 @@ I have been a professional data analyst working for large corporations for more 
 # This Site
 
 The inspiration for creating this site was reading about [Blogdown](https://bookdown.org/yihui/blogdown/). It was pretty easy to set up and publish using [Netlify](https://www.netlify.com/). I have always wanted to carve out my own little corner of the internet, but I don't have much of a plan for it at this time.
+
+I have a full-time job and a family, so I don't intend to update this site on a regular basis, only at the intersection of free time and inspiration.

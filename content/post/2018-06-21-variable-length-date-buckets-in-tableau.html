@@ -10,6 +10,10 @@ slug: "tableau-variable-dates"
 
 
 
+<div class="figure">
+<img src="/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_parameter-dropdown.png" />
+
+</div>
 <p>This is one of the Tableau techniques that I use in almost every dashboard I create. My users usually want to be able to look at trends daily, weekly, or monthly within the same view. This is pretty easy, but it takes a few steps.</p>
 <div id="dummy-data" class="section level1">
 <h1>Dummy Data</h1>
@@ -22,12 +26,12 @@ slug: "tableau-variable-dates"
 write.csv(data, file = &quot;dummy_data.csv&quot;, row.names = FALSE)
 head(data)
 ##         date count
-## 1 2017-07-01    55
-## 2 2017-07-02    94
-## 3 2017-07-03    17
-## 4 2017-07-04    88
-## 5 2017-07-05    89
-## 6 2017-07-06    70</code></pre>
+## 1 2017-07-01    50
+## 2 2017-07-02    62
+## 3 2017-07-03    80
+## 4 2017-07-04    14
+## 5 2017-07-05    79
+## 6 2017-07-06    83</code></pre>
 <p>Next, open up Tableau, and import this CSV using “New Data Source” -&gt; “More…”, then navigate to your file.</p>
 <!-- ![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_import.png) -->
 </div>

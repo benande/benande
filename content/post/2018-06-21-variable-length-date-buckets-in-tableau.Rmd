@@ -12,6 +12,8 @@ slug: "tableau-variable-dates"
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
+![](/post/2018-06-21-variable-length-date-buckets-in-tableau_files/tableau-variable-dates_parameter-dropdown.png)
+
 This is one of the Tableau techniques that I use in almost every dashboard I create. My users usually want to be able to look at trends daily, weekly, or monthly within the same view. This is pretty easy, but it takes a few steps.
 
 # Dummy Data
